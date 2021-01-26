@@ -73,3 +73,4 @@ class IpAddress {
   }
 }
 module.exports = new IpAddress;
+
