@@ -30,7 +30,17 @@ const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
  * @param {callback} callback - A callback function.
  * @return {string} (firstIpAddress) - An IPv4 address.
  */
-function getFirstIpAddress(cidrStr, callback) {
+
+class IpAddress {
+  constructor() {
+    // IAP's global log object is used to output errors, warnings, and other
+    // information to the console, IAP's log files, or a Syslog server.
+    // For more information, consult the Log Class guide on the Itential
+    // Developer Hub https://developer.itential.io/ located
+    // under Documentation -> Developer Guides -> Log Class Guide
+    log.info('Starting the IpAddress product.');
+   }
+  getFirstIpAddress(cidrStr, callback) {
 
   // Initialize return arguments for callback
   let firstIpAddress = null;
@@ -60,30 +70,6 @@ function getFirstIpAddress(cidrStr, callback) {
   // The IAP convention is to pass returned data as the first argument and error
   // data as the second argument to the callback function.
   return callback(firstIpAddress, callbackError);
-}
-
-
-
-/**
- * Calculates an IPv4-mapped IPv6 address.
- * @param {string} ipv4 - An IPv4 address in dotted-quad format.
- * @return {*} (ipv6Address) - An IPv6 address string or null if a run-time problem was detected.
- */
-
-class IpAddress {
-  constructor() {
-    // IAP's global log object is used to output errors, warnings, and other
-    // information to the console, IAP's log files, or a Syslog server.
-    // For more information, consult the Log Class guide on the Itential
-    // Developer Hub https://developer.itential.io/ located
-    // under Documentation -> Developer Guides -> Log Class Guide
-    log.info('Starting the IpAddress product.');  
-      // Display the results on the console.
-      if (error) {
-        console.error(`Error returned from GET request: ${error}`);
-      } else {
-        console.log(`Response returned from GET request: ${data}`);
-    }
-     module.exports = new IpAddress;
   }
 }
+module.exports = new IpAddress;
