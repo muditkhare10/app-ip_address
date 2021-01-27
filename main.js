@@ -21,7 +21,14 @@ const path = require('path');
  * as this module. IAP requires the path object's join method
  * to unequivocally locate the file module.
  */
-const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
+const {getIpv4MappedIpv6Address} = require(path.join(__dirname, 'ipv6.js'));
+
+/**
+ * Calculates an IPv4-mapped IPv6 address.
+ * @param {string} ipv4 - An IPv4 address in dotted-quad format.
+ * @return {*} (ipv6Address) - An IPv6 address string or null if a run-time problem was detected.
+ */
+
 
 /**
  * Calculate and return the first host IP address from a CIDR subnet.
@@ -73,4 +80,3 @@ class IpAddress {
   }
 }
 module.exports = new IpAddress;
-

@@ -40,7 +40,7 @@
         "type": "object",
         "schema": {
           "title": "cidrStr",
-          "$ref": "ipAddresses#/definitions/ipv4CIDR"
+          "$ref": "ipAddresses#/definitions/hostIpv4AndIpv6Address"
         }
       },
       "route": {
