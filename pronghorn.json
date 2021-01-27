@@ -37,7 +37,7 @@
       "output": {
         "name": "firstIpAddress",
         "description": "An object containing both an IPv4 address and its mapped ipv6 address.",
-        "type": "string",
+        "type": "object",
         "schema": {
           "title": "cidrStr",
           "$ref": "ipAddresses#/definitions/hostIpv4AndIpv6Address"
